@@ -76,7 +76,7 @@ do
 				then
 					error "$ret" "$MSG"
 				else
-					echo `date -u -d @$timestamp` - The Custom monitor data were successfully added
+					echo `date -u -d @$(( $timestamp/1000 ))` - The Custom monitor data were successfully added
 					# Now create additional data
 					param=`create_additional_param "${array[@]}"`
 					ret="$?"
@@ -94,7 +94,7 @@ do
 						then
 							error "$ret" "$MSG"
 						else
-							echo `date -u -d @$timestamp` - The Custom monitor additional data were successfully added
+							echo `date -u -d @$(( $timestamp/1000 ))` - The Custom monitor additional data were successfully added
 						fi
 					fi
 				fi

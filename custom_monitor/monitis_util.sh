@@ -26,9 +26,10 @@ function get_date_time() {
 }
 
 # returns current UTC Unix timestamp 
-# (seconds since 00:00:00, Jan 1, 1970)
+# (milliseconds since 00:00:00, Jan 1, 1970)
 function get_timestamp() {
-	date -u +%s
+#	date -u +%s  # seconds since 00:00:00, Jan 1, 1970
+	echo $(( `date -u +%s` * 1000 ))
 }
 
 # sample: echo "'$(trim "  one   two    three  ")'"
